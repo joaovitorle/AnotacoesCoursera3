@@ -88,3 +88,21 @@ print("-------- deep copy -----------")
 print(deeply_copied_version)
 print("-------- shallow copy -----------")
 print(shallow_copy_version)
+
+#9 A worked example of nested iteration
+print('='*15,"#9","="*15)
+
+big_list = [[['one','two',],['seven','eight']],[['nine','four']],[['three','one']]]
+
+
+word_counts = {}
+
+for sub1 in big_list:
+    for sub2 in sub1:
+        for word in sub2:
+            if word in word_counts:
+                word_counts[word] += 1
+            else:
+                word_counts[word] = 1
+
+print(word_counts)
