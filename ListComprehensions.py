@@ -17,3 +17,27 @@ inner_list = tester['info']
 compri = [d['name'] for d in inner_list]
 print(compri)
 
+
+#4
+
+def longlenghts(strings): #Longlenghts is going to take as input a list of strings and return a list of numbers
+    return [len(s) for s in strings if len(s) >= 4] 
+
+print(longlenghts(['a','bc','def','ghij','klmno']))
+
+#5 Manual way 
+def longlenghts(strings):
+    accum = []
+    for s in strings:
+        if len(s) >= 4 :
+            accum.append(len(s))
+    return accum
+print(longlenghts(['a','bc','def','ghij','klmno']))
+
+#Filtering
+
+def longlenghts(strings):
+    filtered_strings = filter(lambda s: len(s)>=4, strings)
+    return map(len, filtered_strings)
+
+print(longlenghts(['a','bc','def','ghij','klmno']))
